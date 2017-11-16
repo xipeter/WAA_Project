@@ -10,4 +10,8 @@ public class welcomeController {
 	public String home() {
 		return "index";
 	}
+	@RequestMapping(value="/home")
+	public String homeIndex() {
+		return "home";
+	}
 }
