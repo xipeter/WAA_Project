@@ -12,7 +12,7 @@ public class welcomeController {
 	@Autowired
 	JavaMailSender sender;
 	
-	@RequestMapping(value="/")
+	@RequestMapping(value= {"/","/index"})
 	public String home() {
 		return "index";
 	}
