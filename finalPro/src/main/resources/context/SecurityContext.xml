@@ -27,7 +27,7 @@
 		<security:remember-me data-source-ref="dataSource"
 			token-validity-seconds="86400" remember-me-parameter="keepMe" />
 		
-		<security:csrf />
+		<security:csrf disabled="true" />
 	</security:http>
 		
 	<security:authentication-manager alias="authenticationManager">
