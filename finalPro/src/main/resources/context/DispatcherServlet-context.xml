@@ -42,6 +42,23 @@
 		</property>
 	</bean>
 
+	<!-- for the tileResolver -->
+
+	<bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<property name="order" value="-2" />
+	</bean>
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles/definite/tile-definition.xml</value>
+			</list>
+		</property>
+	</bean>
 
 	<security:global-method-security
 		pre-post-annotations="enabled" />

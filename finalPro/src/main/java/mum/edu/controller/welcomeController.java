@@ -18,7 +18,7 @@ public class welcomeController {
 	}
 	@RequestMapping(value="/home")
 	public String homeIndex() {
-		return "home";
+		return "admin";
 	}
 	@RequestMapping(value="/test")
 	public String email() {
