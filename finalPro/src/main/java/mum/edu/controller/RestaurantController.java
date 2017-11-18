@@ -12,4 +12,9 @@ public class RestaurantController {
 	public String showRestaurant() {
  		return "restaurant";
 	}
+	
+	@RequestMapping(value="/restaurantSignup", method = RequestMethod.GET)
+	public String signupRestaurant() {
+ 		return "restaurantSignup";
+	}
 }

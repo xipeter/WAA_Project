@@ -15,6 +15,7 @@
 		<security:intercept-url pattern="/login" access="permitAll" />
 		<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/restaurant" access="hasAnyRole('ROLE_ADMIN','ROLE_RESTAURANT')" />
+		<security:intercept-url pattern="/signupRestaurant" access="permitAll" />
 		<security:intercept-url pattern="/DelivererHome" access="hasAnyRole('ROLE_ADMIN','ROLE_DELIVERER')"/>
 
 			
