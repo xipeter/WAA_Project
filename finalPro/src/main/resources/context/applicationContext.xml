@@ -13,8 +13,7 @@
 	<context:property-placeholder location="classpath:application.properties" />
 	<jpa:repositories base-package="mum.edu.repository" entity-manager-factory-ref="entityManager" />
 
-	<bean id="entityManager"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan" value="mum.edu.domain" />
 		<property name="jpaVendorAdapter">
@@ -48,12 +47,11 @@
 
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManager" />
-	</bean>
+      <property name="entityManagerFactory" ref="entityManagerFactory" />
+   	</bean>
 
 	<!-- Scan for transaction-based resources -->
-	<context:component-scan base-package="mum.edu.service" />
-	<context:component-scan base-package="mum.edu.domain" />
+	<context:component-scan base-package="mum.edu.service,mum.edu.repository" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
