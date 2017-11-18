@@ -26,7 +26,7 @@ public class Username {
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
-	List<Role> authority = new ArrayList<Role>();
+	List<Role> role = new ArrayList<Role>();
 
 	public String getUsername() {
 		return username;
@@ -60,12 +60,12 @@ public class Username {
 		this.enabled = enabled;
 	}
 
-	public List<Role> getAuthority() {
-		return authority;
+	public List<Role> getRole() {
+		return role;
 	}
 
-	public void setAuthority(List<Role> authority) {
-		this.authority = authority;
+	public void setAuthority(List<Role> role) {
+		this.role = role;
 	}
 
 }

@@ -14,7 +14,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity 
-public class Deliverer {
+public class Admin {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

@@ -14,7 +14,11 @@ INSERT INTO Role (username, role) VALUES ('admin', 'ROLE_ADMIN');
 INSERT INTO Role (username, role) VALUES ('deliverer', 'ROLE_DELIVERER');
 -- INSERT INTO role (username, role) VALUES ('admin', 'ROLE_USER');
  
-INSERT INTO  User (firstname, lastname,age,title,membernumber, username) VALUES ('Curious','George',12,'Boy Monkey', 8754,'admin');
-INSERT INTO User (firstname, lastname,age,title,membernumber,username) VALUES ('Allen','Rench',123,'Torque Master', 8733,'restaurant');
-INSERT INTO User (firstname, lastname,age,title,membernumber,username) VALUES ('Allen2','Rench2',123,'Torque Master', 8736,'deliverer');
+-- INSERT INTO  User (firstname, lastname,age,title,membernumber, username) VALUES ('Curious','George',12,'Boy Monkey', 8754,'admin');
+-- INSERT INTO User (firstname, lastname,age,title,membernumber,username) VALUES ('Allen','Rench',123,'Torque Master', 8733,'restaurant');
+-- INSERT INTO User (firstname, lastname,age,title,membernumber,username) VALUES ('Allen2','Rench2',123,'Torque Master', 8736,'deliverer');
+
+INSERT INTO  Admin (firstname, lastname,title,username) VALUES ('Peter','Xi','Mr.', 'admin');
+INSERT INTO  Deliverer (firstname, lastname,title,username) VALUES ('Camilo','Antonio','Mr.', 'deliverer');
+INSERT INTO  Restaurant (firstname, lastname,title,username) VALUES ('Sam','Khlok','Mr.', 'restaurant');
  
