@@ -125,6 +125,14 @@
 
 
 		</dependency>
+
+		<!-- for the tiles -->
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+		</dependency>
+
 	</dependencies>
 
 
