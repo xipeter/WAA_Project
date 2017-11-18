@@ -61,8 +61,7 @@
 								<br />
 							</div>
 						</c:if>
-						<form action="<spring:url value="/postLogin"></spring:url>"
-							method="post">
+						<form action="<spring:url value="/postLogin"></spring:url>" method="post">
 							<fieldset>
 								<div class="form-group">
 									<input class="form-control" placeholder="Username"
@@ -73,7 +72,7 @@
 										name="password" type="password" value="" />
 								</div>
 								<div class="checkbox">
-									<label> <input name="remember" type="checkbox"
+									<label> <input name="keepMe" type="checkbox"
 										value="Remember Me" />Remember Me
 									</label>
 								</div>

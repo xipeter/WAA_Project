@@ -9,9 +9,9 @@ INSERT INTO Username(username,password,enabled) VALUES ('restaurant','restaurant
 INSERT INTO Username(username,password,enabled) VALUES ('admin','admin123', TRUE);
 INSERT INTO Username(username,password,enabled) VALUES ('deliverer','deliverer123', TRUE);
   
-INSERT INTO Role (username, role) VALUES ('restaurant', 'Restaurant_Role');
-INSERT INTO Role (username, role) VALUES ('admin', 'Admin_Role');
-INSERT INTO Role (username, role) VALUES ('deliverer', 'Deliverer_Role');
+INSERT INTO Role (username, role) VALUES ('restaurant', 'ROLE_RESTAURANT');
+INSERT INTO Role (username, role) VALUES ('admin', 'ROLE_ADMIN');
+INSERT INTO Role (username, role) VALUES ('deliverer', 'ROLE_DELIVERER');
 -- INSERT INTO role (username, role) VALUES ('admin', 'ROLE_USER');
  
 INSERT INTO  User (firstname, lastname,age,title,membernumber, username) VALUES ('Curious','George',12,'Boy Monkey', 8754,'admin');

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class DeliverController {
 	
-	@RequestMapping(value = "/delivererHome", method = RequestMethod.GET)
+	@RequestMapping(value = "/deliverer", method = RequestMethod.GET)
 	public String displayDelivererHome() {
 		return "DelivererHome";
 	}

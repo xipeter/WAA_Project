@@ -12,9 +12,10 @@
 		
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/index" access="permitAll" />
-		<!-- <security:intercept-url pattern="/admin" access="hasRole('Admin_Role')" />
-		<security:intercept-url pattern="/restaurant" access="hasAnyRole('Admin_Role','Restaurant_Role')" />
-		<security:intercept-url pattern="/DelivererHome" access="hasAnyRole('Admin_Role','Deliverer_Role')"/> -->
+		<security:intercept-url pattern="/login" access="permitAll" />
+		<security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/restaurant" access="hasAnyRole('ROLE_ADMIN','ROLE_RESTAURANT')" />
+		<security:intercept-url pattern="/DelivererHome" access="hasAnyRole('ROLE_ADMIN','ROLE_DELIVERER')"/>
 
 			
 		<security:form-login login-page="/login"

@@ -16,12 +16,13 @@ public class AuthSuccessHandler extends SavedRequestAwareAuthenticationSuccessHa
         System.out.println("role is "+ role);
 
         String redirectUrl = "/login";
-        if(role.contains("Admin_Role")) {
+        if(role.contains("ROLE_ADMIN")) {
+        		System.out.println("role is");
         		redirectUrl = "/admin";
-        } else if(role.contains("Restaurant_Role")) {
+        } else if(role.contains("ROLE_RESTAURANT")) {
         		redirectUrl = "/restaurant";
-        } else if (role.contains("Deliverer_Role")) {
-        		redirectUrl = "/index";
+        } else if (role.contains("ROLE_DELIVERER")) {
+        		redirectUrl = "/deliverer";
         }
         return redirectUrl;
     }
