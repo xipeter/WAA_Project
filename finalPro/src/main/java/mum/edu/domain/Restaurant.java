@@ -14,11 +14,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity 
-public class Deliverer {
+public class Restaurant {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
  	private Long id;
+	
+	@NotEmpty
+	private String name;
 	
 	@Column(length = 16)
 	@NotEmpty
@@ -44,6 +47,12 @@ public class Deliverer {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -64,5 +73,5 @@ public class Deliverer {
 	public void setUserCredentials(Username userCredentials) {
 		this.userCredentials = userCredentials;
 	}
-
+	
   }
