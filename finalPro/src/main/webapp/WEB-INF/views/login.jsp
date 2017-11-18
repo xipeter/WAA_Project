@@ -86,7 +86,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="pull-left"> <h3>${intercepterMessage}</h3> </div>
 </body>
 
 </html>
