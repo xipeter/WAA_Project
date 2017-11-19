@@ -5,14 +5,13 @@
 $(function() {
 	
 	var contextRoot = "/" + window.location.pathname.split('/')[1];
-
+	alert(contextRoot);
 	$("button").click(function() {
         url =contextRoot+ $(this).val();
     	$.ajax({
     		type : 'post',
-    		url : url,
-    	//	dataType : "json", // Accept header
-//    		data : null,
+    		url : contextRoot+"/enable/1",
+    		dataType : "json", // Accept header
     		contentType : 'application/json', // Sends - Content-type
     		success : function(response) {
     			alert(response.desc);
@@ -44,8 +43,8 @@ $(function() {
     				// Error
     			}
     			*/
-    			alert(url);
-    			alert(errorObject.responseJSON);
+    			alert(textStatus);
+    			alert(httpstatus);
     		}
     	});
         

@@ -8,7 +8,6 @@
 	<tiles:putAttribute name="title">Approve</tiles:putAttribute>
 
 	<tiles:putAttribute name="body">
-	
 	<script type="text/javascript"
 	src="<spring:url value="/bootstrap/resource/js/ajax.js"/>"></script>
 

@@ -24,12 +24,12 @@ public class ApproveController {
 		model.addAttribute("restaurants", restaurants);
 		return "approve";
 	}
-	@RequestMapping(value="/enable/{id}",method = RequestMethod.POST)
+	@RequestMapping(value="/enable/{id}",method = RequestMethod.POST,produces="application/json")
 	public @ResponseBody Result enable(@PathVariable("id") String id) {
 		
 		Result result = new Result();
 		result.setCode("1");
-		result.setDesc("enable successfully");
+		result.setDesc("successfully");
 		System.out.print(id);
 		return result;
 	}
