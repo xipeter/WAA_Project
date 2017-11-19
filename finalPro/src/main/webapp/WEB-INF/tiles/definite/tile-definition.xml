@@ -6,14 +6,8 @@
 	
 	<definition name="baseLayout" template="/WEB-INF/tiles/template/layoutTemplate.jsp">
 		<put-attribute name="title" value="Sample Title" />
-
 	</definition>
 
- 
-	 	
-	<definition name="admin1" extends="baseLayout">
-		<put-attribute name="title" value="admin" />
- 		<put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
-	</definition>
+
 	 	
 </tiles-definitions>
