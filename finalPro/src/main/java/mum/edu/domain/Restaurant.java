@@ -37,15 +37,13 @@ public class Restaurant {
 	private String lastName;
  	
 	@Column(length = 100)
-	@NotEmpty
 	@Address
 	private String address;
 	
 	private String email;
 	
-	private String phone;
 	private String note;
-	private String photo;
+//	private String photo;
 	
 
 	@OneToOne(fetch=FetchType.LAZY) 
@@ -83,6 +81,24 @@ public class Restaurant {
 	}
 	public void setUserCredentials(Username userCredentials) {
 		this.userCredentials = userCredentials;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
 	}
 	
   }

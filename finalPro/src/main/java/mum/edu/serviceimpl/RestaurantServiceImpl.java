@@ -50,5 +50,8 @@ public class RestaurantServiceImpl implements RestaurantService {
 		return (List<Restaurant>) restaurantRepository.findByName(name);
 	}
 
+	public Restaurant findByUsername(String username) {
+		return restaurantRepository.findByUsername(username);
+	}
 
 }

@@ -27,7 +27,7 @@
 <script src="<spring:url value='/bootstrap/vendor/metisMenu/metisMenu.min.js'/>"></script>
 <!-- Custom Theme JavaScript -->
 <script src="<spring:url value='/bootstrap/dist/js/sb-admin-2.js'/>"></script>
-
+<script type="text/javascript" src="<spring:url value="/resources/js/ajax.js"/>"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -53,7 +53,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a onlick="showModalProfile()"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -313,6 +313,39 @@
 
     </div>
     <!-- /#wrapper -->
+    
+    <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">Profile Detail</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form role="form">
+                          <fieldset disabled>
+                              <div class="form-group">
+                                  <label for="disabledSelect">Username :</label>
+                                  <input class="form-control" type="text" id="profileName">
+                              </div>
+                              <div class="form-group">
+                                  <label for="disabledSelect">Username :</label>
+                                  <input class="form-control" type="text">
+                              </div>
+                          </fieldset>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" disabled>Save</button>
+                  </div>
+              </div>
+              <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+     <!-- /.modal -->
 
 </body>
 </html>
