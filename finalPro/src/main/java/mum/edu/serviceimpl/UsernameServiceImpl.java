@@ -21,7 +21,8 @@ public class UsernameServiceImpl implements UsernameService {
 	
 	@Autowired
 	private UsernameRepository usernameRepository;
-
+	
+	@PreAuthorize("hasRole('ROLE_RESTAURANT')")
 	public Username findByUsername(String username) {
 		return usernameRepository.findByUsername(username);
 	}

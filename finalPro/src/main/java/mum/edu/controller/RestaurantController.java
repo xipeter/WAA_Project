@@ -34,14 +34,29 @@ public class RestaurantController {
  		return "restaurant/restaurantSignup";
 	}
 	
-	@RequestMapping(value="/profile", method = RequestMethod.GET)
+	@RequestMapping(value="/profile", method = RequestMethod.GET, produces = "application/json")
 	@PreAuthorize("hasRole('ROLE_RESTAURANT')")
-	public @ResponseBody String getProfile() {
+	public @ResponseBody Restaurant getProfile() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         
-        System.out.println("profile page requested "+ username);
+        Restaurant restaurant = new Restaurant();
+        try {
+        		Restaurant res = restaurantService.findByUsername(username);
+        		
+        		restaurant.setId(res.getId());
+        		restaurant.setName(res.getName());
+        		restaurant.setFirstName(res.getFirstName());
+        		restaurant.setLastName(res.getLastName());
+        		restaurant.setAddress(res.getAddress());
+        		restaurant.setEmail(res.getEmail());
+        		restaurant.setNote(res.getNote());
+        }catch (Exception e){
+        		System.out.println("Error: " +e);
+        }
         
- 		return restaurantService.findByUsername(username).toString();
+        System.out.println(restaurant);
+        
+ 		return restaurant;
 	}
 }

@@ -1,25 +1,39 @@
-function getProfile(){
-   	var contextRoot = "/" + window.location.pathname.split( '/' )[1];
-	$.ajax({
-		type : 'GET',
-		url : contextRoot + '/profile',
-		dataType : "json",
-		contentType : 'application/json',
-		success: function(respond){
-			console.log(respond);
-		},
-		error : function(error) {
-			console.log(error.responseJSON.errorType);
-			if (error.responseJSON.errorType == "ValidationError") {
+$(document).ready(function(){
+	var getProfile = function (){
+	   	var contextRoot = "/" + window.location.pathname.split( '/' )[1];
+		$.ajax({
+			type : 'GET',
+			url : contextRoot + '/restaurant/profile',
+			dataType : 'json',
+			contentType : 'application/json',
+			success: function(respond){
+				console.log(respond);
+				$("#id").val(respond.id);
+				$("#restaurantName").val(respond.name);
+				$("#firstName").val(respond.firstName);
+				$("#lastName").val(respond.lastName);
+				$("#address").val(respond.address);
+				$("#email").val(respond.email);
+				$("#note").val(respond.note);
+			},
+			error : function(error) {
+				console.debug(error);
+				console.log(error.responseJSON.errorType);
+				if (error.responseJSON.errorType == "ValidationError") {
 
-			} else {
-				alert(error.responseJSON.errors(0));
-	
+				} else {
+					alert(error.responseJSON.errors(0));
+		
+				}
 			}
-		}
-	});
-};
-
-function showModalProfile(){
-	getProfile();
-}
+		}).then(function(){
+			if(respond !== null){
+				$("#myModal").modal();
+			}
+		});
+	};
+	
+	
+	$("#profile").click(getProfile);
+});
+	

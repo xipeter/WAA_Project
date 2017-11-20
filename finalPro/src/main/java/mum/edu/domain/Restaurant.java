@@ -49,6 +49,8 @@ public class Restaurant {
 	@OneToOne(fetch=FetchType.LAZY) 
  	@JoinColumn(name="username") 
  	Username userCredentials;
+	
+	public Restaurant() {}
  	
  	public Long getId() {
 		return id;

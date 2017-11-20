@@ -53,7 +53,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a onlick="showModalProfile()"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a id="profile"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -325,13 +325,33 @@
                   <div class="modal-body">
                       <form role="form">
                           <fieldset disabled>
-                              <div class="form-group">
-                                  <label for="disabledSelect">Username :</label>
-                                  <input class="form-control" type="text" id="profileName">
+                          	<div class="form-group">
+                                  <label>ID :</label>
+                                  <input class="form-control" type="text" id="id">
+                              </div>
+                         	<div class="form-group">
+                                  <label>Restaurant Name :</label>
+                                  <input class="form-control" type="text" id="restaurantName">
                               </div>
                               <div class="form-group">
-                                  <label for="disabledSelect">Username :</label>
-                                  <input class="form-control" type="text">
+                                  <label>Owner First Name :</label>
+                                  <input class="form-control" type="text" id="firstName">
+                              </div>
+                              <div class="form-group">
+                                  <label>Owner Last Name :</label>
+                                  <input class="form-control" type="text" id="lastName">
+                              </div>
+                              <div class="form-group">
+                                  <label>Address :</label>
+                                  <input class="form-control" type="text" id="address">
+                              </div>
+                              <div class="form-group">
+                                  <label>Email :</label>
+                                  <input class="form-control" type="text" id="email">
+                              </div>
+                              <div class="form-group">
+                                  <label>Note :</label>
+                                  <textarea class="form-control" id="note"></textarea>
                               </div>
                           </fieldset>
                       </form>
