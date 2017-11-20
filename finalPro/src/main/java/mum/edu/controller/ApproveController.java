@@ -46,7 +46,10 @@ public class ApproveController {
 		
 		Result result = new Result();
 		System.out.print(id);
-		usernameService.disable(id);
+		
+		Username user =  usernameService.findByUsername(id);
+		user.setEnabled(false);
+		usernameService.disable(user);
 		result.setCode("1");
 		result.setDesc("successfully");
 		return result;
