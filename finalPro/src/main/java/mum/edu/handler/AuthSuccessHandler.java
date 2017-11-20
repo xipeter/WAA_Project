@@ -13,11 +13,10 @@ public class AuthSuccessHandler extends SavedRequestAwareAuthenticationSuccessHa
         // Get the role of logged in user
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String role = auth.getAuthorities().toString();
-        System.out.println("role is "+ role);
+        //System.out.println("role is "+ role);
 
         String redirectUrl = "/login";
         if(role.contains("ROLE_ADMIN")) {
-        		System.out.println("role is");
         		redirectUrl = "/admin1";
         } else if(role.contains("ROLE_RESTAURANT")) {
         		redirectUrl = "/restaurant";
