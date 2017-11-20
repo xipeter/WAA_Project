@@ -14,5 +14,7 @@ public interface RestaurantService {
  	public Restaurant findOne(Long id);
  	public Restaurant findByUsername(String username);
 	public List<Restaurant> findByName(String name);
+	public List<Restaurant> findRestaurant();
+	public List<Restaurant> findDisabledRestaurant() ;
  
 }

@@ -27,4 +27,10 @@ public class UsernameServiceImpl implements UsernameService {
 		return usernameRepository.findByUsername(username);
 	}
 
+	@Override
+	public void disable(String username) {
+		// TODO Auto-generated method stub
+		usernameRepository.updateEnableByUsername(username);
+	}
+
 }

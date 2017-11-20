@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import mum.edu.domain.Restaurant;
 import mum.edu.domain.Result;
-import mum.edu.serviceimpl.RestaurantServiceImpl;
+import mum.edu.domain.Username;
+import mum.edu.service.RestaurantService;
+import mum.edu.service.UsernameService;
+
 
 @Controller
 public class ApproveController {
 	@Autowired 
-	RestaurantServiceImpl restaurantService;
+	RestaurantService restaurantService;
+	@Autowired
+	UsernameService usernameService;
 	@RequestMapping(value="/approve")
 	public String approve(Model model) {
 		List<Restaurant>  restaurants = restaurantService.findRestaurant();//enabled users
@@ -36,11 +41,14 @@ public class ApproveController {
 		return result;
 	}
 	
-	@RequestMapping(value="/disable/{id}",produces = "application/json")
+	@RequestMapping(value="/disable/{id}", method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody Result disable(@PathVariable("id") String id) {
 		
 		Result result = new Result();
 		System.out.print(id);
+		usernameService.disable(id);
+		result.setCode("1");
+		result.setDesc("successfully");
 		return result;
 	}
 	

@@ -8,8 +8,7 @@
 	<tiles:putAttribute name="title">Approve</tiles:putAttribute>
 
 	<tiles:putAttribute name="body">
-	<script type="text/javascript"
-	src="<spring:url value="/bootstrap/resource/js/ajax.js"/>"></script>
+
 
 		<div class="col-lg-6">
 			<div class="panel panel-default">
@@ -35,8 +34,8 @@
 
 
 							
-											<td><a
-												href="<spring:url value='disable/${restaurant.userCredentials.username}'/>">enable</a></td>
+											<td><button class="btn btn-primary"
+												value="/enable/${restaurant.userCredentials.username}">enable</button></td>
 									
 
 									</tr>
@@ -68,7 +67,7 @@
 									<th>#</th>
 									<th>First Name</th>
 									<th>Last Name</th>
-									<th>Approve</th>
+									<th>Disable</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -80,8 +79,8 @@
 
 
 							
-											<td><a
-												href="<spring:url value='disable/${restaurant.userCredentials.username}'/>">disable</a></td>
+											<td><button class="btn btn-danger" onclick="disable('${restaurant.userCredentials.username}')"
+												>disable</button></td>
 									
 
 									</tr>
@@ -100,7 +99,8 @@
 		</div>
 
 
-
+	<script type="text/javascript"
+	src="<spring:url value="/bootstrap/resource/js/ajax.js"/>"></script>
 
 	</tiles:putAttribute>
 

@@ -7,5 +7,6 @@ import mum.edu.domain.Username;;
  
 public interface UsernameService {
  	public Username findByUsername(String username);
+ 	public void disable(String username);
  
 }

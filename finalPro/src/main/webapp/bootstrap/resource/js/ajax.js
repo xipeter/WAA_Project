@@ -5,12 +5,33 @@
 $(function() {
 	
 	var contextRoot = "/" + window.location.pathname.split('/')[1];
-	alert(contextRoot);
-	$("button").click(function() {
+//	alert(contextRoot);
+
+	disable= function(id){
+		
+        url =contextRoot+ "/disable/"+id;
+    	$.ajax({
+    		type : 'post',
+    		url : url,
+    		dataType : "json", // Accept header
+    		contentType : 'application/json', // Sends - Content-type
+    		success : function(response) {
+    			alert(response.desc);
+    			//Code here..
+    		},
+    		error : function(errorObject,textStatus,httpstatus) {
+    			
+    			alert(textStatus);
+    			alert(httpstatus);
+    		}
+    	});
+	}
+	
+	$(".btn btn-primary").click(function() {
         url =contextRoot+ $(this).val();
     	$.ajax({
     		type : 'post',
-    		url : contextRoot+"/enable/1",
+    		url : url,
     		dataType : "json", // Accept header
     		contentType : 'application/json', // Sends - Content-type
     		success : function(response) {
@@ -49,5 +70,11 @@ $(function() {
     	});
         
     });
+	
+
+	
+	
+	
+	
 //	
 });
