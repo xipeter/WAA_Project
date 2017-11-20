@@ -35,7 +35,6 @@ public class Rider {
 	
 	@Email
 	@NotEmpty
-	@JsonIgnore
 	private String email;
  	
 	@OneToOne(cascade = CascadeType.ALL) 
