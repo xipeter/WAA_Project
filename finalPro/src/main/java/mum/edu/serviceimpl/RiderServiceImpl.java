@@ -18,4 +18,9 @@ public class RiderServiceImpl implements RiderService {
 		return riderRepository.save(rider);
 	}
 
+	@Override
+	public Rider findByUsername(String username) {
+		return riderRepository.findRiderByUsername(username);
+	}
+
 }
