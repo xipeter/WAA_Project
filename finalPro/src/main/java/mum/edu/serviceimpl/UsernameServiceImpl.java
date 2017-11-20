@@ -22,15 +22,16 @@ public class UsernameServiceImpl implements UsernameService {
 	@Autowired
 	private UsernameRepository usernameRepository;
 	
-	@PreAuthorize("hasRole('ROLE_RESTAURANT')")
+	@PreAuthorize("hasRole('ROLE_RESTAURANT') or hasRole('ROLE_ADMIN')")
 	public Username findByUsername(String username) {
 		return usernameRepository.findByUsername(username);
 	}
 
 	@Override
-	public void disable(String username) {
+	public Username disableOrEnable(Username username) {
 		// TODO Auto-generated method stub
-		usernameRepository.updateEnableByUsername(username);
+//		return usernameRepository.updateEnableByUsername(username);
+		return usernameRepository.save(username);
 	}
 
 }

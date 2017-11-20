@@ -35,6 +35,10 @@ public class ApproveController {
 	public @ResponseBody Result enable(@PathVariable("id") String id) {
 		
 		Result result = new Result();
+		Username user =  usernameService.findByUsername(id);
+		user.setEnabled(true);
+		usernameService.disableOrEnable(user);
+		
 		result.setCode("1");
 		result.setDesc("successfully");
 		System.out.print(id);
@@ -45,8 +49,11 @@ public class ApproveController {
 	public @ResponseBody Result disable(@PathVariable("id") String id) {
 		
 		Result result = new Result();
-		System.out.print(id);
-		usernameService.disable(id);
+//		System.out.print(id);
+		
+		Username user =  usernameService.findByUsername(id);
+		user.setEnabled(false);
+		usernameService.disableOrEnable(user);
 		result.setCode("1");
 		result.setDesc("successfully");
 		return result;

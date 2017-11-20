@@ -35,7 +35,7 @@
 
 							
 											<td><button class="btn btn-primary"
-												value="/enable/${restaurant.userCredentials.username}">enable</button></td>
+												onclick="update('${restaurant.userCredentials.username}',1)">enable</button></td>
 									
 
 									</tr>
@@ -79,7 +79,7 @@
 
 
 							
-											<td><button class="btn btn-danger" onclick="disable('${restaurant.userCredentials.username}')"
+											<td><button class="btn btn-danger" onclick="update('${restaurant.userCredentials.username}',0)"
 												>disable</button></td>
 									
 
