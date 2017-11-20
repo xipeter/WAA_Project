@@ -29,6 +29,16 @@ public class OrderDeliveryServiceImpl implements OrderDeliveryService {
 	public OrderDelivery find(Long id) {
 		return orderDeliveryRepository.findOne(id);
 	}
+
+	@Override
+	public List<OrderDelivery> getOrderDeliveriesByRiderAndStatus(Long riderId, Long statusId) {
+		return orderDeliveryRepository.listOrdersByRiderAndStatus(riderId, statusId);
+	}
+
+	@Override
+	public void update(OrderDelivery order) {
+		orderDeliveryRepository.save(order);
+	}
 	
 	
 

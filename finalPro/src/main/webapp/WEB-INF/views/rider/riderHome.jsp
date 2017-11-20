@@ -118,7 +118,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    	   <c:forEach var="order" items="${orders}">
+                                    	   <c:forEach var="order" items="${requestedOrders}">
                                     	   		<tr>
 	                                            <td>${order.id}</td>
 	                                            <td>${order.customerName}</td>
@@ -126,6 +126,43 @@
 	                                            <td>${order.address}</td>
 	                                            <td>
 	                                            		<button class="btn btn-primary" onclick="acceptOrder('${order.id}')">Accept</button>
+	                                            </td>
+                                        		</tr>		
+                                    	   </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+            		</div>
+        		</div>
+        </div>
+        
+        <div class="row">
+        		<div class="col-lg-6">
+            		<div class="panel panel-default">
+                		<div class="panel-heading">
+                     	Current deliveries
+                 	</div>
+                 	<div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Customer</th>
+                                            <th>Restaurant</th>
+                                            <th>Address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	   <c:forEach var="order" items="${currentOrders}">
+                                    	   		<tr>
+	                                            <td>${order.id}</td>
+	                                            <td>${order.customerName}</td>
+	                                            <td>${order.restaurant.name}</td>
+	                                            <td>${order.address}</td>
+	                                            <td>
+	                                            		<button class="btn btn-primary" onclick="completeOrder('${order.id}')">Complete</button>
 	                                            </td>
                                         		</tr>		
                                     	   </c:forEach>

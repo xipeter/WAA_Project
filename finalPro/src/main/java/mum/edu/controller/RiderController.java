@@ -82,8 +82,12 @@ public class RiderController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         Rider rider = riderService.findByUsername(username);
-		List<OrderDelivery> orders = orderDeliveryService.getOrderDeliveriesByRiderId(rider.getId());
-		model.addAttribute("orders", orders);
+        
+		List<OrderDelivery> requestedOrders = orderDeliveryService.getOrderDeliveriesByRiderAndStatus(rider.getId(), 1L);
+		model.addAttribute("requestedOrders", requestedOrders);
+		
+		List<OrderDelivery> currentOrders = orderDeliveryService.getOrderDeliveriesByRiderAndStatus(rider.getId(), 2L);
+		model.addAttribute("currentOrders", currentOrders);
 		
 		return "rider/riderHome";
 	}

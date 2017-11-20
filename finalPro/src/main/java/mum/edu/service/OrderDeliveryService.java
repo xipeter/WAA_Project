@@ -11,5 +11,9 @@ public interface OrderDeliveryService {
 	OrderDelivery find(Long id);
 	
 	List<OrderDelivery> getOrderDeliveriesByRiderId(Long id);
+	
+	List<OrderDelivery> getOrderDeliveriesByRiderAndStatus(Long riderId, Long statusId);
+	
+	void update(OrderDelivery order);
 
 }
