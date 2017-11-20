@@ -28,7 +28,7 @@ public class UsernameServiceImpl implements UsernameService {
 	}
 
 	@Override
-	public Username disable(Username username) {
+	public Username disableOrEnable(Username username) {
 		// TODO Auto-generated method stub
 //		return usernameRepository.updateEnableByUsername(username);
 		return usernameRepository.save(username);

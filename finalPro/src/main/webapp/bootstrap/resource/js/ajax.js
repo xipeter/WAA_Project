@@ -6,10 +6,13 @@ $(function() {
 	
 	var contextRoot = "/" + window.location.pathname.split('/')[1];
 //	alert(contextRoot);
-
-	disable= function(id){
-		
-        url =contextRoot+ "/disable/"+id;
+	
+	update= function(id,kind){
+		url =contextRoot+ "/disable/"+id;
+		if(kind=="1"){
+			url =contextRoot+ "/enable/"+id;
+		}
+        
     	$.ajax({
     		type : 'post',
     		url : url,
@@ -39,31 +42,7 @@ $(function() {
     			//Code here..
     		},
     		error : function(errorObject,textStatus,httpstatus) {
-    			// error: function(jqXHR, textStatus, HTTPStatus ){
-    			// jqXHR = jQuery XMLHttpRequest superset of XMLHttpRequest
-    			// EXAMPLE values: error: function(jQuery XMLHttpRequest, "error",
-    			// "Bad Request" ){
-    			// see http://api.jquery.com/jquery.ajax/
     			
-    			/*
-
-    			if (errorObject.responseJSON.errorType == "ValidationError") {
-    				$('#success').html("");
-    				$('#errors').html("");
-    				$("#errors").append('<H3 align="center"> Error(s)!! <H3>');
-    				$("#result").append('<p>');
-
-    				var errorList = errorObject.responseJSON.errors;
-    				$.each(errorList, function(i, error) {
-    					$("#errors").append(error.message + '<br>');
-    				});
-    				$("#errors").append('</p>');
-    				$('#result').show();
-    			} else {
-    				alert(errorObject.responseJSON.errors(0)); // "non" Validation
-    				// Error
-    			}
-    			*/
     			alert(textStatus);
     			alert(httpstatus);
     		}
