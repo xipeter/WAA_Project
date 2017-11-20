@@ -17,7 +17,7 @@ public class VolunteerInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 
 		// test interceptor Order		
-		System.out.println("INTERCEPTOR PREHANDLE");
+		//System.out.println("INTERCEPTOR PREHANDLE");
 
 		return true;
 	}

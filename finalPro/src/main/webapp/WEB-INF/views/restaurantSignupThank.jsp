@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -66,10 +67,10 @@
                             <a href="<spring:url value='/login' />"><i class="fa fa-sign-in fa-fw"></i> Login</a>
                         </li>
                         <li>
-                            <a href="<spring:url value='/signupRestaurant' />"><i class="fa fa-users fa-fw"></i> Become our Partner</a>
+                            <a href="<spring:url value='/restaurantSignup' />"><i class="fa fa-users fa-fw"></i> Become our Partner</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-car  fa-fw"></i> Become our Rider</a>
+                            <a href="<spring:url value='/riderSignup' />"><i class="fa fa-car  fa-fw" ></i> Become our Rider</a>
                         </li>
                     </ul>
                 </div>
@@ -92,56 +93,10 @@
                             Restaurant Detail
                         </div>
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <form role="form">
-                                        <div class="form-group col-lg-4">
-                                            <label>Restaurant Name</label>
-                                            <input class="form-control" placeholder="i.e Panda Chinese Food">
-                                            <p class="help-block">Error Message</p>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label>Restaurant Owner First Name</label>
-                                            <input class="form-control" placeholder="i.e A Ey">
-                                            <p class="help-block">Error Message</p>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label>Restaurant Owner Last Name</label>
-                                            <input class="form-control" placeholder="i.e Sun">
-                                            <p class="help-block">Error Message</p>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label>Restaurant Address</label>
-                                            <input class="form-control" placeholder="i.e 1000th 4th North Street, Fairfield, 52557,IA ">
-                                            <p class="help-block">Error Message</p>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label>Email</label>
-                                            <input class="form-control" placeholder="i.e panda@gmail.com">
-                                            <p class="help-block">Error Message</p>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label>Phone</label>
-                                            <input class="form-control" placeholder="i.e 515770918">
-                                            <p class="help-block">Error Message</p>
-                                        </div>
-                                        <div class="form-group col-lg-8">
-                                            <label>Note</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label>Restaurant Photo</label>
-                                            <input type="file">
-                                        </div>
-                                        <div class="form-group col-lg-12">
-                                            <button type="submit" class="btn btn-default">Submit Button</button>
-                                            <button type="reset" class="btn btn-default">Reset Button</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Your request has been processed. Please check your email. To login, Please click <a href="<spring:url value='/login' />" class="alert-link">here</a>.
                             </div>
-                            <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
                     </div>

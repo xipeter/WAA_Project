@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import mum.edu.domain.Restaurant;
+import mum.edu.domain.Role;
 import mum.edu.domain.Username;
 import mum.edu.repository.RestaurantRepository;
 import mum.edu.repository.UsernameRepository;
@@ -32,11 +33,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 //	@PreAuthorize("hasRole('ROLE_RESTAURANT')")
-	public void saveFull( Restaurant restaurant) {  		
+	public void saveFull( Restaurant restaurant) {  	
 		usernameRepository.save(restaurant.getUserCredentials());
 		restaurantRepository.save(restaurant);
 	}
-
 
 	public List<Restaurant> findAll() {
 		return (List<Restaurant>)restaurantRepository.findAll();

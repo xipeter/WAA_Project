@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import mum.edu.validator.Address;
@@ -22,28 +23,25 @@ public class Restaurant {
 	@GeneratedValue(strategy=GenerationType.AUTO)
  	private Long id;
 	
-	@NotEmpty
-	@Size(min=2, max = 100, message= "{EmptyOrSize}")
+	@Size(min = 2, max = 100, message= "{Size.name.validation}")
 	private String name;
 	
-	@Column(length = 50)
-	@NotEmpty
-	@Size(min=2, max = 50, message= "{EmptyOrSize}")
+	@Size(min = 2, max = 50, message = "{Size.firstName.validation}")
 	private String firstName;
 	
-	@Column(length = 50)
-	@NotEmpty
-	@Size(min=2, max = 50, message= "{EmptyOrSize}")
+	@Size(min = 2, max = 50, message = "{Size.lastName.validation}")
 	private String lastName;
  	
-	@Column(length = 100)
-	@Address
+	@Size(min = 5, max = 100, message = "{Size.address.validation}")
 	private String address;
 	
+	@Email
+	@NotEmpty
 	private String email;
 	
+	@NotEmpty(message = "Please put something here")
 	private String note;
-//	private String photo;
+	private String phone;
 	
 
 	@OneToOne(fetch=FetchType.EAGER) 
@@ -101,6 +99,14 @@ public class Restaurant {
 	}
 	public void setNote(String note) {
 		this.note = note;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
   }

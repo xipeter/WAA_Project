@@ -20,7 +20,7 @@ INSERT INTO Role (username, role) VALUES ('deliverer', 'ROLE_DELIVERER');
 
 INSERT INTO  Admin (firstname, lastname,title,username) VALUES ('Peter','Xi','Mr.', 'admin');
 INSERT INTO  Rider (firstname, lastname,title,username) VALUES ('Camilo','Andres','Mr.', 'rider');
-INSERT INTO  Restaurant (name,firstname, lastname,title,username) VALUES ('Panda Chinese Food','Sam','Khlok','Mr.', 'restaurant');
-INSERT INTO  Deliverer (firstname, lastname,title,username) VALUES ('Camilo','Antonio','Mr.', 'deliverer');
-INSERT INTO  Restaurant (name,firstname, lastname,username,note,email,address) VALUES ('Panda Chinese Food','Sam','Khlok','restaurant', 'great restaurant', 'sam@ting.com','address 1 2 3');
+-- INSERT INTO  Restaurant (name,firstname, lastname,title,username) VALUES ('Panda Chinese Food','Sam','Khlok','Mr.', 'restaurant');
+-- INSERT INTO  Deliverer (firstname, lastname,title,username) VALUES ('Camilo','Antonio','Mr.', 'deliverer');
+INSERT INTO  Restaurant (name,firstname, lastname,username,note,email,address,phone) VALUES ('Panda Chinese Food','Sam','Khlok','restaurant', 'great restaurant', 'sam@ting.com','address 1 2 3','1012212122');
  

@@ -64,7 +64,7 @@ public class Username {
 		return role;
 	}
 
-	public void setAuthority(List<Role> role) {
+	public void setRole(List<Role> role) {
 		this.role = role;
 	}
 

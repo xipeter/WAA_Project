@@ -66,10 +66,10 @@
                             <a href="<spring:url value='/login' />"><i class="fa fa-sign-in fa-fw"></i> Login</a>
                         </li>
                         <li>
-                            <a href="<spring:url value='/restaurant/signup' />"><i class="fa fa-users fa-fw"></i> Become our Partner</a>
+                            <a href="<spring:url value='/restaurantSignup' />"><i class="fa fa-users fa-fw"></i> Become our Partner</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-car  fa-fw"></i> Become our Rider</a>
+                            <a href="<spring:url value='/riderSignup' />"><i class="fa fa-car  fa-fw" ></i> Become our Rider</a>
                         </li>
                     </ul>
                 </div>

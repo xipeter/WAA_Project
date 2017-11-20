@@ -3,7 +3,7 @@ $(document).ready(function(){
 	   	var contextRoot = "/" + window.location.pathname.split( '/' )[1];
 		$.ajax({
 			type : 'GET',
-			url : contextRoot + '/restaurant/profile',
+			url : contextRoot + '/restaurantProfile',
 			dataType : 'json',
 			contentType : 'application/json',
 			success: function(respond){
