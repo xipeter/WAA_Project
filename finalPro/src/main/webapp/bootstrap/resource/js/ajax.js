@@ -21,6 +21,7 @@ $(function() {
     		success : function(response) {
     			alert(response.desc);
     			//Code here..
+    			window.location.reload();
     		},
     		error : function(errorObject,textStatus,httpstatus) {
     			
