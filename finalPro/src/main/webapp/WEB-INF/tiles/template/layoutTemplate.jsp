@@ -158,7 +158,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -182,16 +182,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i><spring:message code="home.sidebar.Dashboard.label"/></a>
+                            <a href="<spring:url value='/admin1'/>"><i class="fa fa-dashboard fa-fw"></i><spring:message code="home.sidebar.Dashboard.label"/></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Approve Management<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Approve Restaurant</a>
+                                    <a href="<spring:url value='/approve'/>" >Approve Restaurant</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Approve Delivery</a>
+                                    <a href="<spring:url value='/approve'/>">Approve Delivery</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

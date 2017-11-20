@@ -12,6 +12,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import mum.edu.validator.Address;
+
 
 @Entity 
 public class Restaurant {
@@ -21,25 +23,34 @@ public class Restaurant {
  	private Long id;
 	
 	@NotEmpty
+	@Size(min=2, max = 100, message= "{EmptyOrSize}")
 	private String name;
 	
-	@Column(length = 16)
+	@Column(length = 50)
 	@NotEmpty
+	@Size(min=2, max = 50, message= "{EmptyOrSize}")
 	private String firstName;
 	
-	@Column(length = 16)
+	@Column(length = 50)
 	@NotEmpty
-	@Size(min=5, max = 9, message= "{EmptyOrSize}")
+	@Size(min=2, max = 50, message= "{EmptyOrSize}")
 	private String lastName;
  	
-	@Column(length = 32)
-	@NotEmpty
-	private String title;
+	@Column(length = 100)
+	@Address
+	private String address;
+	
+	private String email;
+	
+	private String note;
+//	private String photo;
 	
 
 	@OneToOne(fetch=FetchType.LAZY) 
  	@JoinColumn(name="username") 
  	Username userCredentials;
+	
+	public Restaurant() {}
  	
  	public Long getId() {
 		return id;
@@ -72,6 +83,24 @@ public class Restaurant {
 	}
 	public void setUserCredentials(Username userCredentials) {
 		this.userCredentials = userCredentials;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
 	}
 	
   }

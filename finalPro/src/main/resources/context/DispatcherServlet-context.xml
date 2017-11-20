@@ -21,9 +21,11 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages" />
+		<property name="defaultEncoding" value="UTF-8"/>  
 	</bean>
 
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />
+	<mvc:resources location="/resources/" mapping="/resources/**" />
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />

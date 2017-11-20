@@ -35,7 +35,7 @@ public class VolunteerInterceptor extends HandlerInterceptorAdapter {
 			else 
 				userMessage = "Interceptor: not in admin role";
 		}
-		modelAndView.getModelMap().addAttribute("intercepterMessage", userMessage);
+		//modelAndView.getModelMap().addAttribute("intercepterMessage", userMessage);
 
 		return;
 	}
