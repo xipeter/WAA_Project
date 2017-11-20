@@ -20,10 +20,12 @@ $(document).ready(function(){
 				console.debug(error);
 				console.log(error.responseJSON.errorType);
 				if (error.responseJSON.errorType == "ValidationError") {
-
+					var errors = error.responseJSON.errors;
+					$.each(errors, function(i, error){
+						$("#modalBody").append("<div class='alert alert-success alert-dismissable'>" +error+"</div>");
+					});
 				} else {
 					alert(error.responseJSON.errors(0));
-		
 				}
 			}
 		}).then(function(){
