@@ -19,6 +19,6 @@ INSERT INTO Role (username, role) VALUES ('deliverer', 'ROLE_DELIVERER');
 -- INSERT INTO User (firstname, lastname,age,title,membernumber,username) VALUES ('Allen2','Rench2',123,'Torque Master', 8736,'deliverer');
 
 INSERT INTO  Admin (firstname, lastname,title,username) VALUES ('Peter','Xi','Mr.', 'admin');
-INSERT INTO  Deliverer (firstname, lastname,title,username) VALUES ('Camilo','Antonio','Mr.', 'deliverer');
+INSERT INTO  Rider (firstname, lastname,title,username) VALUES ('Camilo','Andres','Mr.', 'rider');
 INSERT INTO  Restaurant (name,firstname, lastname,title,username) VALUES ('Panda Chinese Food','Sam','Khlok','Mr.', 'restaurant');
  

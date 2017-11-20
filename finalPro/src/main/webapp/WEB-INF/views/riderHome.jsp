@@ -8,9 +8,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Deliverer</title>
+<title>Rider</title>
 </head>
 <body>
-	<h3>Deliverer home</h3>
+	<h3>Rider home</h3>
 </body>
 </html>
