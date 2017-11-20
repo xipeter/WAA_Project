@@ -17,4 +17,8 @@ public interface RestaurantRepository extends CrudRepository<Restaurant,Long> {
 	
 	@Query("SELECT r FROM Restaurant r WHERE r.userCredentials.username =:username")
 	public Restaurant findByUsername(@Param("username") String username);
+	@Query(value="select a.* from  restaurant a ,username b where a.username = b.username and b.enabled=1",nativeQuery = true)
+	public List<Restaurant> findRestaurant();
+	@Query(value="select a.* from  restaurant a ,username b where a.username = b.username and b.enabled!=1",nativeQuery = true)
+	public List<Restaurant> findDisabledRestaurant();
 }

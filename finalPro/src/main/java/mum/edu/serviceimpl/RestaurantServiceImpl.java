@@ -53,5 +53,12 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public Restaurant findByUsername(String username) {
 		return restaurantRepository.findByUsername(username);
 	}
+	
+	public List<Restaurant> findRestaurant() {
+		return restaurantRepository.findRestaurant();
+	}
+	public List<Restaurant> findDisabledRestaurant() {
+		return restaurantRepository.findDisabledRestaurant();
+	}
 
 }

@@ -13,7 +13,7 @@
 
 		<div class="col-lg-6">
 			<div class="panel panel-default">
-				<div class="panel-heading" id="heading-test">Restaurant Approve</div>
+				<div class="panel-heading" id="heading-test">Restaurant Enable</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
 					<div class="table-responsive">
@@ -27,20 +27,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${restaurants}" var="restaurant">
-
+								<c:forEach items="${restaurants_disabled}" var="restaurant">
 									<tr>
 										<td>${restaurant.id}</td>
 										<td>${restaurant.firstName}</td>
 										<td>${restaurant.lastName }</td>
-										<c:if test="${restaurant.id==1}">
-											<td><button value="/enable/${restaurant.id}">enable</button></td>
-										</c:if>
 
-										<c:if test="${restaurant.id==2}">
+
+							
 											<td><a
-												href="<spring:url value='disable/${restaurant.id}'/>">disable</a></td>
-										</c:if>
+												href="<spring:url value='disable/${restaurant.userCredentials.username}'/>">enable</a></td>
+									
 
 									</tr>
 
@@ -58,9 +55,10 @@
 		</div>
 
 
+
 		<div class="col-lg-6">
 			<div class="panel panel-default">
-				<div class="panel-heading">Delivery Guy Approve</div>
+				<div class="panel-heading" id="heading-test">Restaurant Disabled</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
 					<div class="table-responsive">
@@ -70,28 +68,27 @@
 									<th>#</th>
 									<th>First Name</th>
 									<th>Last Name</th>
-									<th>Username</th>
+									<th>Approve</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-								</tr>
+								<c:forEach items="${restaurants}" var="restaurant">
+									<tr>
+										<td>${restaurant.id}</td>
+										<td>${restaurant.firstName}</td>
+										<td>${restaurant.lastName }</td>
+
+
+							
+											<td><a
+												href="<spring:url value='disable/${restaurant.userCredentials.username}'/>">disable</a></td>
+									
+
+									</tr>
+
+								</c:forEach>
+
+
 							</tbody>
 						</table>
 					</div>
@@ -101,6 +98,8 @@
 			</div>
 			<!-- /.panel -->
 		</div>
+
+
 
 
 	</tiles:putAttribute>

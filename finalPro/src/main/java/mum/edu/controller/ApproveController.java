@@ -20,8 +20,10 @@ public class ApproveController {
 	RestaurantServiceImpl restaurantService;
 	@RequestMapping(value="/approve")
 	public String approve(Model model) {
-		List<Restaurant>  restaurants = restaurantService.findAll();
+		List<Restaurant>  restaurants = restaurantService.findRestaurant();//enabled users
+		List<Restaurant>  restaurantsDisabled = restaurantService.findDisabledRestaurant();//disabled users
 		model.addAttribute("restaurants", restaurants);
+		model.addAttribute("restaurants_disabled", restaurantsDisabled);
 		return "approve";
 	}
 	@RequestMapping(value="/enable/{id}",method = RequestMethod.POST,produces="application/json")

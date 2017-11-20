@@ -46,7 +46,7 @@ public class Restaurant {
 //	private String photo;
 	
 
-	@OneToOne(fetch=FetchType.LAZY) 
+	@OneToOne(fetch=FetchType.EAGER) 
  	@JoinColumn(name="username") 
  	Username userCredentials;
 	
