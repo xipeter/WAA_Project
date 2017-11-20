@@ -1,5 +1,8 @@
 package mum.edu.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +46,10 @@ public class RiderController {
 		
 		Role role = new Role();
 		role.setUsername(rider.getEmail());
+		role.setRole("ROLE_RIDER");
+		List<Role> roles = new ArrayList<>();
 		
-		
+		rider.getUserCredentials().setRole(roles);
 		rider.getUserCredentials().setUsername(rider.getEmail());
 		riderService.save(rider);
 		
