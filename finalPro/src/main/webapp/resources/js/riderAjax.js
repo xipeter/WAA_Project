@@ -23,21 +23,39 @@ $(document).ready(function(){
 	
 	completeOrder = function(deliveryOrderId) {
 		
-		$.ajax({
-			type : 'post',
-			url : contextRoot + '/completeOrderDelivery/' + deliveryOrderId,
-			dataType : "json",
-			contentType : 'application/json',
-			success : function(response) {
-				alert("Completed!");
-				
-				location.reload();
-				
-			},
-			error : function(errorObject) {
-				alert("ouch");
-			}
-		});
+		$("#orderDeliveryNumber").html("" + deliveryOrderId);
+		$("#myModal").modal();
+		
+	}
+	
+	confirmOrder = function() {
+		
+		$("#emptyError").hide();
+		
+		if ($("#orderId").val() != "") {
+			
+			$("#emptyError").hide();
+			
+			var orderId = $("#orderDeliveryNumber").text();
+			var orderTrackNumber = $("#orderId").val();
+			
+			$.ajax({
+				type : 'post',
+				url : contextRoot + '/completeOrderDelivery/' + orderId + '/' + orderTrackNumber,
+				dataType : "json",
+				contentType : 'application/json',
+				success : function(response) {
+					location.reload();
+				},
+				error : function(errorObject) {
+					alert("error");
+				}
+			});
+			
+		} else {
+			$("#emptyError").show();
+		}
+
 	}
 	
 });

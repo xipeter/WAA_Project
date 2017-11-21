@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import mum.edu.domain.OrderDelivery;
 import mum.edu.domain.OrderStatus;
+import mum.edu.exception.OrderNotFoundException;
 import mum.edu.service.OrderDeliveryService;
 import mum.edu.service.OrderStatusService;
 
@@ -34,6 +35,24 @@ public class RiderRestController {
 		return order;
 	}
 	
-	
+	@RequestMapping(value = "/completeOrderDelivery/{deliveryOrderId}/{orderTrackNumber}", method = RequestMethod.POST)
+	public @ResponseBody OrderDelivery completeOrder(
+			@PathVariable(value = "deliveryOrderId") Long deliveryOrderId,
+			@PathVariable(value = "orderTrackNumber") String orderTrackNumber
+	) {
+		
+		OrderDelivery order = orderDeliveryService.find(deliveryOrderId);
+		
+		if (!orderTrackNumber.equalsIgnoreCase(order.getTrackNumber())) {
+			throw new OrderNotFoundException("Order not found");
+		}
+		
+		OrderStatus newStatus = orderStatusService.find(3L);
+		order.setStatus(newStatus);
+		
+		orderDeliveryService.update(order);
+		
+		return order;
+	}
 
 }

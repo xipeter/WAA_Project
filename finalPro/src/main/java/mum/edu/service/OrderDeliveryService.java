@@ -10,6 +10,8 @@ public interface OrderDeliveryService {
 	
 	OrderDelivery find(Long id);
 	
+	OrderDelivery findByTrackNumber(String trackNumber); 
+	
 	List<OrderDelivery> getOrderDeliveriesByRiderId(Long id);
 	
 	List<OrderDelivery> getOrderDeliveriesByRiderAndStatus(Long riderId, Long statusId);

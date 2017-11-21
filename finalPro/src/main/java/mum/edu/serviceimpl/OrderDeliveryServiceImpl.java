@@ -39,6 +39,11 @@ public class OrderDeliveryServiceImpl implements OrderDeliveryService {
 	public void update(OrderDelivery order) {
 		orderDeliveryRepository.save(order);
 	}
+
+	@Override
+	public OrderDelivery findByTrackNumber(String trackNumber) {
+		return orderDeliveryRepository.orderByTrackNumber(trackNumber);
+	}
 	
 	
 
