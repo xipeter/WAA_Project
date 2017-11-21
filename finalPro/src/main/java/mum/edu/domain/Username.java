@@ -23,6 +23,8 @@ public class Username {
 	@Transient
 	String verifyPassword;
 	Boolean enabled;
+	
+	String UID;
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
@@ -66,6 +68,14 @@ public class Username {
 
 	public void setRole(List<Role> role) {
 		this.role = role;
+	}
+
+	public String getUID() {
+		return UID;
+	}
+
+	public void setUID(String uID) {
+		UID = uID;
 	}
 
 }
