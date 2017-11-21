@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 
-	<mvc:annotation-driven />
+	<mvc:annotation-driven validator="validator" conversion-service="conversionService" />
 	<context:component-scan base-package="mum.edu" />
 
 	<bean
@@ -18,10 +18,25 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="formatters">
+			<set>
+				<bean class="mum.edu.formatter.EmailFormatter">
+				</bean>
+			</set>
+		</property>
+	</bean>
+
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages" />
-		<property name="defaultEncoding" value="UTF-8"/>  
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="messageSource" />
 	</bean>
 
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />
