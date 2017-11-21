@@ -135,7 +135,7 @@
 	                                 <td>${order.address}</td>
 	                                 <td>${order.status.status}</td>
 	                                 <td class="text-center">
-	                                 		<button class="btn btn-primary" onclick="sendRequest('${order.id}')">Cancel Request</button>
+	                                 		<button class="btn btn-primary" onclick="sendRequest('${order.id}')" disabled>Cancel Request</button>
 	                                 </td>
                             		</tr>
                             	</c:forEach>
