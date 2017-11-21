@@ -1,6 +1,8 @@
 package mum.edu.domain;
 
-public class Result {
+import java.io.Serializable;
+
+public class Result implements Serializable {
 	private String code;
 	private String desc;
 	public String getCode() {

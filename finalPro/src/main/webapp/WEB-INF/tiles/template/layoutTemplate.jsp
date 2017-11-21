@@ -182,22 +182,22 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<spring:url value='/admin1'/>"><i class="fa fa-dashboard fa-fw"></i><spring:message code="home.sidebar.Dashboard.label"/></a>
+                            <a href="<spring:url value='/admin1'/>"><i class="fa fa-dashboard fa-fw"></i><spring:message code="home.sidebar.Dashboard.home"/></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Approve Management<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> </i><spring:message code="home.sidebar.Dashboard.manageCategory"/><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<spring:url value='/approve'/>" >Approve Restaurant</a>
+                                    <a href="<spring:url value='/approve'/>" ></i><spring:message code="home.sidebar.Dashboard.restaurant"/></a>
                                 </li>
                                 <li>
-                                    <a href="<spring:url value='/approve'/>">Approve Delivery</a>
+                                    <a href="<spring:url value='/approve'/>"></i><spring:message code="home.sidebar.Dashboard.delivery"/></a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="<spring:url value='/sendmailForm'/>"><i class="fa fa-bar-chart-o fa-fw"></i>Email Management</a>
+                            <a href="<spring:url value='/sendmailForm'/>"><i class="fa fa-bar-chart-o fa-fw"></i></i><spring:message code="home.sidebar.Dashboard.email"/></a>
                         </li>
 
 
