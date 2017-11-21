@@ -94,7 +94,7 @@ public class RiderController {
 		rider.getUserCredentials().setRole(roles);
 		rider.getUserCredentials().setUsername(rider.getEmail());
 		rider.getUserCredentials().setUID(userUID);
-		rider.getUserCredentials().setEnabled(true);
+		rider.getUserCredentials().setEnabled(false);
 		riderService.save(rider);
 		roleRepository.save(role);
 		
