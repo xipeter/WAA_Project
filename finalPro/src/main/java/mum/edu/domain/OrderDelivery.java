@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -27,15 +29,18 @@ public class OrderDelivery implements Serializable{
 	
 	private String trackNumber;
 	
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	//@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "status_id") 
 	private OrderStatus status;
 		
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	//@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "restaurant_id") 
 	private Restaurant restaurant;
 	
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	//@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "rider_id") 
 	private Rider rider;
 
@@ -93,6 +98,10 @@ public class OrderDelivery implements Serializable{
 
 	public void setTrackNumber(String trackNumber) {
 		this.trackNumber = trackNumber;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

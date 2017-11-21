@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import mum.edu.domain.OrderDelivery;
+import mum.edu.domain.OrderStatus;
+import mum.edu.domain.Restaurant;
 import mum.edu.service.OrderDeliveryService;
+import mum.edu.service.RestaurantService;
 import mum.edu.service.RiderService;
 import mum.edu.domain.Rider;
 
@@ -20,8 +25,30 @@ public class OrderDeliveryControllerHelper {
 	@Autowired
 	RiderService riderService;
 	
+	@Autowired
+	RestaurantService restaurantService;
+	
 	public OrderDelivery saveOrderDelivery(OrderDelivery orderDelivery, Rider rider) {
+		OrderStatus orderStatus = new OrderStatus();
+		orderStatus.setId(new Long(1));
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+		Restaurant restaurant = new Restaurant();
+		Restaurant res =	 restaurantService.findByUsername(username);
+		
+//		restaurant.setId(res.getId());
+//		restaurant.setName(res.getName());
+//		restaurant.setFirstName(res.getFirstName());
+//		restaurant.setLastName(res.getLastName());
+//		restaurant.setAddress(res.getAddress());
+//		restaurant.setEmail(res.getEmail());
+//		restaurant.setNote(res.getNote());
+		
 		orderDelivery.setRider(rider);
+		orderDelivery.setStatus(orderStatus);
+		orderDelivery.setRestaurant(res);
+		
 		return orderDeliveryService.save(orderDelivery);
 	}
 	
