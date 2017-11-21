@@ -1,23 +1,28 @@
 package mum.edu.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity 
-public class Rider {
+public class Rider implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -36,10 +41,16 @@ public class Rider {
 	@Email
 	@NotEmpty
 	private String email;
+	
+	private String photoURL;
  	
 	@OneToOne(cascade = CascadeType.ALL) 
  	@JoinColumn(name="username") 
  	Username userCredentials;
+	
+	@JsonIgnore
+	@Transient
+	private MultipartFile photo;
  	
  	public Long getId() {
 		return id;
@@ -72,5 +83,17 @@ public class Rider {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public MultipartFile getPhoto() {
+		return photo;
+	}
+	public void setPhoto(MultipartFile photo) {
+		this.photo = photo;
+	}
+	public String getPhotoURL() {
+		return photoURL;
+	}
+	public void setPhotoURL(String photoURL) {
+		this.photoURL = photoURL;
+	}
 
-  }
+}

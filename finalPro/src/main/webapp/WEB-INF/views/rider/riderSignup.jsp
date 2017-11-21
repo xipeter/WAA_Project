@@ -29,7 +29,7 @@
 						Rider registration
 					</div>
 					<div class="panel-body">
-						<form:form modelAttribute="newRider" action="processRider" method="post">
+						<form:form modelAttribute="newRider" action="processRider" method="post" enctype="multipart/form-data">
 							<div class="form-group">
 								<label>First name</label>
 								<form:input path="firstName" class="form-control" />
@@ -67,6 +67,7 @@
 									<form:errors path="userCredentials.verifyPassword" cssStyle="color : red;" />
 								</div>
 							</div>
+							<form:input id="employeePhoto" path="photo" type="file"/>
 							<input id="submit" type="submit" tabindex="5" value="Create" />
 						</form:form>
 					</div>

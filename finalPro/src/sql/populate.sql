@@ -4,10 +4,10 @@
 -- INSERT INTO employee VALUES (NULL,12, 8754,'Curious','George' ,'Boy Monkey',1);
 -- INSERT INTO employee VALUES (NULL,123, 8733,'Allen','Rench' ,'Torque Master',2);
 
-INSERT INTO Username(username,password,enabled) VALUES ('restaurant@gmail.com','restaurant123', TRUE);
+INSERT INTO Username(username,UID,password,enabled) VALUES ('restaurant@gmail.com','c298d333-2151-4668-ba49-1d8b74c76fea','restaurant123', TRUE);
 -- INSERT INTO credentials(username,password,enabled) VALUES ('admin','$2a$10$S/wlXEo/APzf.Sn1cO2p4.V12EJmaw.uzrHelMvkpuahjmHWnSafe', TRUE);
-INSERT INTO Username(username,password,enabled) VALUES ('admin@gmail.com','admin123', TRUE);
-INSERT INTO Username(username,password,enabled) VALUES ('camilo@gmail.com','deliverer123', TRUE);
+INSERT INTO Username(username,UID,password,enabled) VALUES ('admin@gmail.com','f98ab14d-cf9a-48a7-a8c7-6b4b9bc3b2fd','admin123', TRUE);
+INSERT INTO Username(username,UID,password,enabled) VALUES ('camilo@gmail.com','7ad8f775-665e-4af2-a5ca-b36066f36bb6','deliverer123', TRUE);
   
 INSERT INTO Role (username, role) VALUES ('restaurant@gmail.com', 'ROLE_RESTAURANT');
 INSERT INTO Role (username, role) VALUES ('admin@gmail.com', 'ROLE_ADMIN');

@@ -3,6 +3,7 @@ package mum.edu.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -62,6 +63,7 @@ public class RestaurantController {
 		
 		restaurant.getUserCredentials().setRole(roles);
 		restaurant.getUserCredentials().setEnabled(false);
+		restaurant.getUserCredentials().setUID(UUID.randomUUID().toString());
 		restaurantService.saveFull(restaurant);
  		
 		return "redirect:/restaurantSignupThank";
