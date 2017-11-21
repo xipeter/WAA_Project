@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import mum.edu.domain.OrderDelivery;
 import mum.edu.domain.Restaurant;
 import mum.edu.domain.Role;
 import mum.edu.domain.Username;
+import mum.edu.service.OrderDeliveryService;
 import mum.edu.service.RestaurantService;
 import mum.edu.service.UsernameService;
 
@@ -33,10 +36,24 @@ public class RestaurantController {
 	
 	@Autowired
 	UsernameService usernameService;
+	
+	@Autowired
+	OrderDeliveryService orderDeliveryService;
 
 	@RequestMapping(value= {"/restaurant","/restaurant/"}, method = RequestMethod.GET)
-	public String showRestaurant() {
+	public String showRestaurant(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        Restaurant res = restaurantService.findByUsername(username);
+        List<OrderDelivery> list = orderDeliveryService.getOrderDeliveriesByRestaurantId(res.getId());
+        model.addAttribute("orders", list );
+        
  		return "restaurant";
+	}
+	
+	@RequestMapping(value= {"/restaurantOrderDelivery"}, method = RequestMethod.GET)
+	public String showRestaurantOrderDelivery() {
+ 		return "restaurantOrderDelivery";
 	}
 	
 	@RequestMapping(value="/restaurantSignup", method = RequestMethod.GET)

@@ -1,5 +1,6 @@
 package mum.edu.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -66,6 +67,20 @@ public class RiderController {
 		
 		MultipartFile employeePhoto = rider.getPhoto();
 		String rootDirectory = servletContext.getRealPath("/");
+		String userUID = UUID.randomUUID().toString();
+		
+		if (employeePhoto != null && !employeePhoto.isEmpty()) {
+			try {
+				
+				String photoURL = rootDirectory + "resources/images/" + userUID + ".png";
+				employeePhoto.transferTo(new File(photoURL));
+				rider.setPhotoURL(photoURL);
+				
+			} catch (Exception e) {
+				throw new RuntimeException("Employee photo saving failed", e);
+				//throw new UnableToUploadPhotoException("Employee photo saving failed");
+			}
+		}
 		
 		Role role = new Role();
 		role.setUsername(rider.getEmail());
@@ -74,7 +89,8 @@ public class RiderController {
 		
 		rider.getUserCredentials().setRole(roles);
 		rider.getUserCredentials().setUsername(rider.getEmail());
-		rider.getUserCredentials().setUID(UUID.randomUUID().toString());
+		rider.getUserCredentials().setUID(userUID);
+		rider.getUserCredentials().setEnabled(true);
 		riderService.save(rider);
 		
 		return "redirect:/riderSuccess";
@@ -98,6 +114,8 @@ public class RiderController {
 		
 		List<OrderDelivery> currentOrders = orderDeliveryService.getOrderDeliveriesByRiderAndStatus(rider.getId(), 2L);
 		model.addAttribute("currentOrders", currentOrders);
+		
+		model.addAttribute("rider", rider);
 		
 		return "rider/riderHome";
 	}

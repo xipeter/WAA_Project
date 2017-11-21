@@ -110,38 +110,46 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Order Delivery List</h1>
+                    <h1 class="page-header">Forms</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="table-responsive">
-                     <table class="table table-striped table-bordered table-hover">
-                         <thead>
-                             <tr>
-                             	<th>Track No</th>
-                                 <th>Customer Name</th>
-                                 <th>Address</th>
-                                 <th>Status</th>
-                                 <th></th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                         	<c:forEach var="order" items="${orders}">
-                        	   		<tr>
-	                       	   		<td>${order.trackNumber}</td>
-	                                 <td>${order.customerName}</td>
-	                                 <td>${order.address}</td>
-	                                 <td>${order.status.status}</td>
-	                                 <td class="text-center">
-	                                 		<button class="btn btn-primary" onclick="sendRequest('${order.id}')">Cancel Request</button>
-	                                 </td>
-                            		</tr>
-                            	</c:forEach>
-                         </tbody>
-                     </table>
-                 </div>
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            Order Delivery
+                        </div>
+                        <div class="panel-body">
+                        		<div class="stepwizard">
+                                  <div class="stepwizard-row setup-panel">
+                                  	<div class="stepwizard-step col-xs-3">
+                                          <a href="#s" type="button" class="btn btn-primary btn-circle" disabled="disabled">0</a>
+                                          <p><small>Start</small></p>
+                                      </div>
+                                      <div class="stepwizard-step col-xs-3">
+                                          <a href="#" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
+                                          <p><small>Customer Detail</small></p>
+                                      </div>
+                                      <div class="stepwizard-step col-xs-3">
+                                          <a href="#" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                                          <p><small>Choose a Rider</small></p>
+                                      </div>
+                                      <div class="stepwizard-step col-xs-3">
+                                          <a href="#" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                                          <p><small>Thank You</small></p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-12 text-center">
+                              		<a href="<spring:url value='/orderDelivery' />" class="btn btn-primary"> Start </a>
+                              </div>
+                        </div>    
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
         </div>

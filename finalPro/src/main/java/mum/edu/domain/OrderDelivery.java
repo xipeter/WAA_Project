@@ -1,5 +1,6 @@
 package mum.edu.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class OrderDelivery {
+public class OrderDelivery implements Serializable{
+
+	private static final long serialVersionUID = -3560539622417210365L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

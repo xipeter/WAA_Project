@@ -1,5 +1,7 @@
 package mum.edu.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,11 @@ public class RiderServiceImpl implements RiderService {
 	@Override
 	public Rider findByUsername(String username) {
 		return riderRepository.findRiderByUsername(username);
+	}
+	
+	@Override
+	public List<Rider> getAvailableRider() {
+		return (List<Rider>) riderRepository.getAvailableRider();
 	}
 
 }

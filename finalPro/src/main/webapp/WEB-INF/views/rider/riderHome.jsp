@@ -18,6 +18,7 @@
 	<title>Rider home</title>
 </head>
 <body>
+	<img src="<c:url value="/resource/images/${rider.photoURL}.png"></c:url>" alt="image"  style = "width:30%"/>
 	<div id="wrapper">
 		<!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
