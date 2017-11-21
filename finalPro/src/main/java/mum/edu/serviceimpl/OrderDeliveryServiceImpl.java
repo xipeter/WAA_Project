@@ -50,5 +50,9 @@ public class OrderDeliveryServiceImpl implements OrderDeliveryService {
 		return orderDeliveryRepository.listOrdersByRestaurant(id);
 	}
 	
+	@Override
+	public String getNextTrackNo() {
+		return String.valueOf(orderDeliveryRepository.getNextTrackNo() + 1);
+	};
 
 }

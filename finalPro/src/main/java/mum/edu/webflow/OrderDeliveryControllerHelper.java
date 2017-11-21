@@ -34,20 +34,12 @@ public class OrderDeliveryControllerHelper {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
-		Restaurant restaurant = new Restaurant();
 		Restaurant res =	 restaurantService.findByUsername(username);
-		
-//		restaurant.setId(res.getId());
-//		restaurant.setName(res.getName());
-//		restaurant.setFirstName(res.getFirstName());
-//		restaurant.setLastName(res.getLastName());
-//		restaurant.setAddress(res.getAddress());
-//		restaurant.setEmail(res.getEmail());
-//		restaurant.setNote(res.getNote());
 		
 		orderDelivery.setRider(rider);
 		orderDelivery.setStatus(orderStatus);
 		orderDelivery.setRestaurant(res);
+		orderDelivery.setTrackNumber(orderDeliveryService.getNextTrackNo());
 		
 		return orderDeliveryService.save(orderDelivery);
 	}
