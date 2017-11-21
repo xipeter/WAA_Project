@@ -36,7 +36,7 @@ public class Restaurant implements Serializable {
 	@Size(min = 2, max = 50, message = "{Size.lastName.validation}")
 	private String lastName;
  	
-	@Size(min = 5, max = 100, message = "{Size.address.validation}")
+	@Address
 	private String address;
 	
 	@Email

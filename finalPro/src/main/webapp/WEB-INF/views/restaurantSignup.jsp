@@ -114,7 +114,7 @@
 	                                        </div>
 	                                        <div class="form-group col-lg-4">
 	                                            <label>Restaurant Address</label>
-	                                            <form:input class="form-control" placeholder="i.e 1000th 4th North Street, Fairfield, 52557,IA " path="address"/>
+	                                            <form:input class="form-control" placeholder="i.e 1000th 4th North Street, Fairfield, 52557, IA " path="address"/>
 	                                            <form:errors path="address" cssStyle="color : red;" />
 	                                        </div>
 	                                        <div class="form-group col-lg-4">
