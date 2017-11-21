@@ -81,10 +81,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-plus-circle fa-fw"></i> New Request</a>
+                            <a href="<spring:url value='/restaurantOrderDelivery' />"><i class="fa fa-plus-circle fa-fw"></i> New Request</a>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-list-ul fa-fw"></i> Request List</a>
+                            <a href="<spring:url value='/restaurant' />"><i class="fa fa-list-ul fa-fw"></i> Request List </a>
                         </li>
                         <!-- <li>
                             <a href="index.html"><i class="fa fa-dashboard  fa-fw"></i> Dashboard</a>
