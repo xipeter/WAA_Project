@@ -18,7 +18,6 @@
 	<title>Rider home</title>
 </head>
 <body>
-	<img src="<c:url value="/resource/images/${rider.photoURL}.png"></c:url>" alt="image"  style = "width:30%"/>
 	<div id="wrapper">
 		<!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -29,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<spring:url value='/restaurant'/>">Restaurant</a>
+                <a class="navbar-brand" href="<spring:url value='/rider'/>">Taobao Rider</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -56,39 +55,18 @@
             <!-- /.navbar-top-links -->
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
+                		<div class="panel-body">
+                			<img class="img-circle" alt="Rider photo" src="${pageContext.request.contextPath}/resources/images/${rider.photoURL}.png" width="100"/>
+	                		<h3>${rider.firstName}</h3>
+                		</div>
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
                         <li>
                             <a href="index.html"><i class="fa fa-plus-circle fa-fw"></i> New Request</a>
                         </li>
                         <li>
                             <a href="index.html"><i class="fa fa-list-ul fa-fw"></i> Request List</a>
                         </li>
-                        <!-- <li>
-                            <a href="index.html"><i class="fa fa-dashboard  fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            /.nav-second-level
-                        </li> -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -98,12 +76,12 @@
 	<div id="page-wrapper">
 		<div class="row">
 	    		<div class="col-lg-12">
-	    			<h1 class="page-header">Rider home</h1>
+	    			<h1 class="page-header">Your deliveries <p class="fa fa-cab"> </p></h1>
 	    		</div>
 	    </div>
 	    <div class="row">
-        		<div class="col-lg-6">
-            		<div class="panel panel-default">
+        		<div class="col-lg-12">
+            		<div class="panel panel-primary">
                 		<div class="panel-heading">
                      	Available Delivery orders
                  	</div>
@@ -126,7 +104,7 @@
 	                                            <td>${order.restaurant.name}</td>
 	                                            <td>${order.address}</td>
 	                                            <td>
-	                                            		<button class="btn btn-primary" onclick="acceptOrder('${order.id}')">Accept</button>
+	                                            		<button type="button" class="btn btn-outline btn-primary" onclick="acceptOrder('${order.id}')">Accept</button>
 	                                            </td>
                                         		</tr>		
                                     	   </c:forEach>
@@ -139,8 +117,8 @@
         </div>
         
         <div class="row">
-        		<div class="col-lg-6">
-            		<div class="panel panel-default">
+        		<div class="col-lg-12">
+            		<div class="panel panel-green">
                 		<div class="panel-heading">
                      	Current deliveries
                  	</div>
@@ -163,7 +141,7 @@
 	                                            <td>${order.restaurant.name}</td>
 	                                            <td>${order.address}</td>
 	                                            <td>
-	                                            		<button class="btn btn-primary" onclick="completeOrder('${order.id}')">Complete</button>
+	                                            		<button type="button" class="btn btn-outline btn-success" onclick="completeOrder('${order.id}')">Complete</button>
 	                                            </td>
                                         		</tr>		
                                     	   </c:forEach>

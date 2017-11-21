@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import mum.edu.domain.OrderDelivery;
 import mum.edu.domain.Rider;
 import mum.edu.domain.Role;
+import mum.edu.repository.RoleRepository;
 import mum.edu.service.OrderDeliveryService;
 import mum.edu.service.RestaurantService;
 import mum.edu.service.RiderService;
@@ -43,6 +44,9 @@ public class RiderController {
 	
 	@Autowired
 	ServletContext servletContext;
+	
+	@Autowired
+	RoleRepository roleRepository;
 	
 	@RequestMapping(value = "/rider", method = RequestMethod.GET)
 	public String displayDelivererHome() {
@@ -74,7 +78,7 @@ public class RiderController {
 				
 				String photoURL = rootDirectory + "resources/images/" + userUID + ".png";
 				employeePhoto.transferTo(new File(photoURL));
-				rider.setPhotoURL(photoURL);
+				rider.setPhotoURL(userUID);
 				
 			} catch (Exception e) {
 				throw new RuntimeException("Employee photo saving failed", e);
@@ -92,6 +96,7 @@ public class RiderController {
 		rider.getUserCredentials().setUID(userUID);
 		rider.getUserCredentials().setEnabled(true);
 		riderService.save(rider);
+		roleRepository.save(role);
 		
 		return "redirect:/riderSuccess";
 	}

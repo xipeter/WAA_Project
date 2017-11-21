@@ -8,6 +8,7 @@ public interface RiderService {
 
 	Rider save(Rider rider);
 	Rider findByUsername(String username);
+	void saveFull(Rider rider);
 	List<Rider> getAvailableRider();
 	
 }
