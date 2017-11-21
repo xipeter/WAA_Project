@@ -28,5 +28,6 @@ INSERT INTO OrderStatus (status) VALUES ('NEW');
 INSERT INTO OrderStatus (status) VALUES ('RIDING');
 INSERT INTO OrderStatus (status) VALUES ('DONE');
 
-INSERT INTO OrderDelivery (address, restaurant_id, rider_id, status_id) VALUES ('Cool address in Fairfield', 1, 1, 1);
+INSERT INTO OrderDelivery (address, customerName, trackNumber, restaurant_id, rider_id, status_id) VALUES ('304 W.Hempstead Avenue Fairfield, IA', 'Josh Stark', "123456", 1, 1, 1);
+INSERT INTO OrderDelivery (address, customerName, trackNumber, restaurant_id, rider_id, status_id) VALUES ('1000 N Street Fairfield, IA', 'Martin King', "654321", 1, 1, 1);
  

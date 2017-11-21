@@ -20,15 +20,19 @@ public class OrderDelivery {
 	
 	private String address;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	private String customerName;
+	
+	private String trackNumber;
+	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "status_id") 
 	private OrderStatus status;
 		
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "restaurant_id") 
 	private Restaurant restaurant;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "rider_id") 
 	private Rider rider;
 
@@ -71,5 +75,21 @@ public class OrderDelivery {
 	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
-	
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getTrackNumber() {
+		return trackNumber;
+	}
+
+	public void setTrackNumber(String trackNumber) {
+		this.trackNumber = trackNumber;
+	}
+
 }
