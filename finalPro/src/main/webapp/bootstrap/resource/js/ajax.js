@@ -6,17 +6,22 @@ $(function() {
 	
 	var contextRoot = "/" + window.location.pathname.split('/')[1];
 //	alert(contextRoot);
-	
+	var data ={};
 	update= function(id,kind){
-		url =contextRoot+ "/disable/"+id;
+		url =contextRoot+ "/disable";
+		data = {
+				"email":id,
+				"id":""
+		};
 		if(kind=="1"){
-			url =contextRoot+ "/enable/"+id;
+			url =contextRoot+ "/enable";
 		}
         
     	$.ajax({
     		type : 'post',
     		url : url,
     		dataType : "json", // Accept header
+    		data:JSON.stringify(data),
     		contentType : 'application/json', // Sends - Content-type
     		success : function(response) {
     			alert(response.desc);

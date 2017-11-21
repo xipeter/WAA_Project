@@ -7,10 +7,12 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import mum.edu.domain.EmailHistory;
 import mum.edu.domain.Restaurant;
 import mum.edu.domain.Result;
 import mum.edu.domain.Username;
@@ -35,16 +37,16 @@ public class ApproveController {
 		model.addAttribute("restaurants_disabled", restaurantsDisabled);
 		return "approve";
 	}
-	@RequestMapping(value="/enable/{id}",method = RequestMethod.POST,produces="application/json")
-	public @ResponseBody Result enable(@PathVariable("id") String id) {
+	@RequestMapping(value="/enable",method = RequestMethod.POST,produces="application/json")
+	public @ResponseBody Result enable(@RequestBody EmailHistory emailHistory) {
 		
 		Result result = new Result();
-		System.out.println(id);
-		Username user =  usernameService.findByUsername(id);
+//		System.out.println(id);
+		Username user =  usernameService.findByUsername(emailHistory.getEmail());
 		user.setEnabled(true);
 		usernameService.disableOrEnable(user);
 		//get the user detail
-		Restaurant resturant = restaurantService.findByUsername(id);
+		Restaurant resturant = restaurantService.findByUsername(emailHistory.getEmail());
 		
 		
 		//send the email
@@ -68,13 +70,12 @@ public class ApproveController {
 		return result;
 	}
 	
-	@RequestMapping(value="/disable/{id}", method = RequestMethod.POST, produces = "application/json")
-	public @ResponseBody Result disable(@PathVariable("id") String id) {
+	@RequestMapping(value="/disable", method = RequestMethod.POST, produces = "application/json")
+	public @ResponseBody Result disable(@RequestBody EmailHistory emailHistory) {
 		
 		Result result = new Result();
-//		System.out.print(id);
-		
-		Username user =  usernameService.findByUsername(id);
+
+		Username user =  usernameService.findByUsername(emailHistory.getEmail());
 		user.setEnabled(false);
 		usernameService.disableOrEnable(user);
 		result.setCode("1");
