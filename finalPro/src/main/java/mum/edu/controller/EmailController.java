@@ -53,13 +53,23 @@ public class EmailController {
 	}
 	@RequestMapping(value="/sendmailForm",method = RequestMethod.POST)
 	public String postemail(@Valid @ModelAttribute("emailobj") Email email,BindingResult bingResult,RedirectAttributes redirect) {
-		System.out.print(email.getHistorys().size()+" "+email.getSubject()+"  "+email.getContent());
+//		System.out.print(email.getHistorys().size()+" "+email.getSubject()+"  "+email.getContent());
+		SimpleMailMessage temp = new SimpleMailMessage();
+		List<EmailHistory> historys = email.getHistorys();
+		for(int i =0;i<historys.size();i++) {
+			temp.setTo(historys.get(i).getEmail());
+			temp.setSubject(email.getSubject());
+			temp.setText(email.getContent());
+			emailService.sendEmail(temp);
+		}
+		
+		
 		if(bingResult.hasErrors()) {
 			return "email";
 		}
 
-		Email temp = emailService.save(email);
-		redirect.addFlashAttribute("emailSent", temp);
+		Email temp1 = emailService.save(email);
+		redirect.addFlashAttribute("emailSent", temp1);
 		return "redirect:/result";
 	}
 	@RequestMapping(value="/result")
