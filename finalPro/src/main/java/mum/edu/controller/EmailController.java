@@ -57,7 +57,14 @@ public class EmailController {
 		if(bingResult.hasErrors()) {
 			return "email";
 		}
-		return "email";
+
+		Email temp = emailService.save(email);
+		redirect.addFlashAttribute("emailSent", temp);
+		return "redirect:/result";
+	}
+	@RequestMapping(value="/result")
+	public String result() {
+		return "result";
 	}
 
 }
