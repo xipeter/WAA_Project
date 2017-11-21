@@ -23,5 +23,8 @@ public interface OrderDeliveryRepository extends CrudRepository<OrderDelivery, L
 	
 	@Query(value="SELECT * FROM OrderDelivery WHERE restaurant_id = ?1 ", nativeQuery = true)
 	public List<OrderDelivery> listOrdersByRestaurant(@Param("id") Long id);
+	
+	@Query(value="SELECT tracKNumber FROM OrderDelivery order by tracKNumber desc limit 1;", nativeQuery = true)
+	public int getNextTrackNo();
 
 }

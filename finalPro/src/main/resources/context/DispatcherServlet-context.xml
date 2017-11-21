@@ -35,6 +35,10 @@
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
+<<<<<<< HEAD
+=======
+		<!-- <property name="basename" value="classpath:messages,classpath:errorMessages" /> -->
+>>>>>>> 01a573b1655687d241f7de2f20e38f4a2ae3d11f
 		<property name="basename" value="messages" />
 		<property name="defaultEncoding" value="UTF-8"/>  
 	</bean>
