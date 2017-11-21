@@ -197,7 +197,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-bar-chart-o fa-fw"></i>Email Reports</a>
+                            <a href="<spring:url value='/sendmailForm'/>"><i class="fa fa-bar-chart-o fa-fw"></i>Email Management</a>
                         </li>
 
 
