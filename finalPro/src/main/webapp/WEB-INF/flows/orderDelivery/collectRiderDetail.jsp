@@ -145,48 +145,46 @@
 							<form:form modelAttribute="orderDelivery" class="form-horizontal">
 								<fieldset>
 									<legend>Rider List</legend>
-									<%-- <div class="form-group">
-										<label class="control-label col-lg-2" for="firstName">First Name</label>
-										<div class="col-lg-10">
-											<form:input path="rider.firstName" type="text" class="form:input-large" />
-										</div>
-									</div>
-					 				<div class="form-group">
-										<label class="control-label col-lg-2" for="lastName">Last Name</label>
-										<div class="col-lg-10">
-											<form:input path="rider.lastName" type="text" class="form:input-large" />
-										</div>
-									</div> --%>
 									<div class="table-responsive">
 		                                <table class="table table-striped table-bordered table-hover">
 		                                    <thead>
 		                                        <tr>
+		                                        		<th>ID</th>
 		                                            <th>First Name</th>
 		                                            <th>Last Name</th>
-		                                            <th>Status</th>
-		                                            <th></th>
+		                                            <!-- <th></th> -->
 		                                        </tr>
 		                                    </thead>
 		                                    <tbody>
-		                                    	   <c:forEach var="rider" items="${riders}">
-		                                    	   		<tr>
-			                                            <td>${rider.firstName}</td>
-			                                            <td>${rider.lastName}</td>
-			                                            <td>status?</td>
-			                                            <td class="text-center">
-			                                            		<button class="btn btn-primary" onclick="sendRequest('${rider.id}')">Send Request</button>
-			                                            </td>
-		                                        		</tr>		
-		                                    	   </c:forEach>
+	                                    	   		<tr>
+	                                    	   			<td>${rider.id}</td>
+		                                            <td>${rider.firstName}</td>
+		                                            <td>${rider.lastName}</td>
+		                                            <%-- <td class="text-center">
+		                                            		<button class="btn btn-primary" onclick="sendRequest('${rider.id}')">Send Request</button>
+		                                            </td> --%>
+	                                        		</tr>
 		                                    </tbody>
 		                                </table>
 		                            </div>
+		                            <div class="form-group">
+										<label class="control-label col-lg-2" for="customerName">Customer Name</label>
+										<div class="col-lg-10">
+											<form:input path="customerName" type="text" class="form:input-large" />
+										</div>
+									</div>
+		                            <div class="form-group">
+										<label class="control-label col-lg-2" for="address">Customer Address</label>
+										<div class="col-lg-10">
+											<form:input path="address" type="text" class="form:input-large" />
+										</div>
+									</div>
 									<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
 									<div class="form-group">
 										<div class="col-lg-offset-2 col-lg-10">
 											<button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Cancel</button>
 											<button id="back" class="btn btn-success" name="_eventId_backToCollectCustomerInfo">Back</button>
-											<button type="submit" id="btnAdd" class="btn btn-primary" name="_eventId_riderDetailCollected">Next</button>
+											<button type="submit" id="btnAdd" class="btn btn-danger" name="_eventId_riderDetailCollected">Confirm</button>
 										</div>
 									</div>
 								</fieldset>

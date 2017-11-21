@@ -20,7 +20,8 @@ public class OrderDeliveryControllerHelper {
 	@Autowired
 	RiderService riderService;
 	
-	public OrderDelivery saveOrderDelivery(OrderDelivery orderDelivery) {
+	public OrderDelivery saveOrderDelivery(OrderDelivery orderDelivery, Rider rider) {
+		orderDelivery.setRider(rider);
 		return orderDeliveryService.save(orderDelivery);
 	}
 	
@@ -29,10 +30,10 @@ public class OrderDeliveryControllerHelper {
 		return orderDeliver;
 	}
 	
-	public List<Rider> getAvailableRider(){
+	public Rider getAvailableRider(){
 		List<Rider> list = riderService.getAvailableRider();
-		System.out.println(list.toString());
-		return riderService.getAvailableRider();
+
+		return list.get(0);
 	}
 	
 }
