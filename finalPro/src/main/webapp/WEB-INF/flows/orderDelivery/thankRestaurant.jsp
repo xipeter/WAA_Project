@@ -145,20 +145,20 @@
 							<form class="form-horizontal">
 								<fieldset>
 									<legend>Thank You</legend>
-									<h4 class="alert alert-success"> Thanks for the order - ${orderDelivery.id}.The tracking number is ${orderDelivery.trackNumber} 
+									<h4 class="alert alert-success"> Thanks for the order - ${orderDelivery.id}. The tracking number is ${orderDelivery.trackNumber} 
 									and our rider detail is as following :</h3>
-									<%-- <div class="form-group">
+									<div class="form-group">
 										<label class="control-label col-lg-2" for="firstName">First Name</label>
 										<div class="col-lg-10">
-											<form:input path="rider.firstName" type="text" class="form:input-large" />
+											<input value="${rider.firstName}" type="text" class="form:input-large" disabled/>
 										</div>
 									</div>
 					 				<div class="form-group">
 										<label class="control-label col-lg-2" for="lastName">Last Name</label>
 										<div class="col-lg-10">
-											<form:input path="rider.lastName" type="text" class="form:input-large" />
+											<input value="${rider.lastName}" type="text" class="form:input-large" disabled/>
 										</div>
-									</div> --%>
+									</div>
 								</fieldset>
 							</form>
 							<div class="col-lg-12 text-center">

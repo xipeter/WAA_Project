@@ -17,5 +17,9 @@ public interface OrderDeliveryService {
 	List<OrderDelivery> getOrderDeliveriesByRiderAndStatus(Long riderId, Long statusId);
 	
 	void update(OrderDelivery order);
+	
+	List<OrderDelivery> getOrderDeliveriesByRestaurantId(Long id);
+	
+	String getNextTrackNo();
 
 }
