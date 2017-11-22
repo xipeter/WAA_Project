@@ -57,10 +57,13 @@
                            
                                 <input type="text" class="form-control" placeholder="Track No i.e 123 xxx xxx" name="number">
                                 <span class="input-group-btn">
-                                <input class="btn btn-default" type="submit" value="track">
-                                    <i class="fa fa-search">11</i>
-                                </a>
-                            </span>
+	                                <button class="btn btn-default" type="submit">
+	                                    <i class="fa fa-search"></i>
+	                                </button>
+	                                <!-- <a class="btn btn-default" type="submit" value="track">
+	                                    <i class="fa fa-search">11</i>
+	                                </a> -->
+                            		</span>
                             </div>
                             </form>
                             <!-- /input-group -->
