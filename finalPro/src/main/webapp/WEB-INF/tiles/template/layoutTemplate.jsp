@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">TaoBao system </a>
+                <a class="navbar-brand" href="index.html">TaoBao Admin System </a>
             </div>
             <!-- /.navbar-header -->
 
