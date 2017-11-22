@@ -74,15 +74,7 @@
                                 
                             </a>
                         </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="?language=US">
-                                <div>
-                                    <strong>English</strong>
-                                </div>
 
-                            </a>
-                        </li>
 
                     </ul>
                     <!-- /.dropdown-messages -->
