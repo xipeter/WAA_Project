@@ -29,6 +29,7 @@ import mum.edu.repository.RoleRepository;
 import mum.edu.service.OrderDeliveryService;
 import mum.edu.service.RestaurantService;
 import mum.edu.service.RiderService;
+import mum.edu.validator.PasswordValidator;
 
 @Controller
 public class RiderController {
@@ -48,6 +49,9 @@ public class RiderController {
 	@Autowired
 	RoleRepository roleRepository;
 	
+	@Autowired
+	PasswordValidator passwordValidator;
+	
 	@RequestMapping(value = "/rider", method = RequestMethod.GET)
 	public String displayDelivererHome() {
 		return "DelivererHome";
@@ -56,7 +60,7 @@ public class RiderController {
 	// Rider sign Up
 	@RequestMapping(value = "/riderSignup", method = RequestMethod.GET)
 	public String getRiderSignupForm(@ModelAttribute("newRider") Rider rider) {
-		return "rider/riderSignup";
+		return "riderSignup";
 	}
 	
 	@RequestMapping(value = "/processRider", method = RequestMethod.POST)
@@ -65,8 +69,9 @@ public class RiderController {
 			BindingResult bindingResult
 	) {
 		
+		passwordValidator.validate(rider, bindingResult);
 		if (bindingResult.hasErrors()) {
-			return "rider/riderSignup";
+			return "riderSignup";
 		}
 		
 		MultipartFile employeePhoto = rider.getPhoto();
@@ -103,7 +108,7 @@ public class RiderController {
 	
 	@RequestMapping(value = "/riderSuccess")
 	public String successRiderSignup() {
-		return "rider/riderSuccess";
+		return "riderSuccess";
 	}
 	
 	// Rider home
@@ -122,7 +127,7 @@ public class RiderController {
 		
 		model.addAttribute("rider", rider);
 		
-		return "rider/riderHome";
+		return "riderHome";
 	}
 	
 	@RequestMapping(value = "/riderProfile", method = RequestMethod.GET, produces = "application/json")

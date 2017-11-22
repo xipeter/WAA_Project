@@ -30,12 +30,12 @@ public class Rider implements Serializable {
 	
 	@Column(length = 16)
 	@NotEmpty
-	@Size(min = 4, max = 16)
+	@Size(min = 4, max = 16, message= "{Size.firstName.validation}")
 	private String firstName;
 	
 	@Column(length = 16)
 	@NotEmpty
-	@Size(min=5, max = 9, message= "{EmptyOrSize}")
+	@Size(min=5, max = 9, message= "{Size.name.validation}")
 	private String lastName;
 	
 	@Email
