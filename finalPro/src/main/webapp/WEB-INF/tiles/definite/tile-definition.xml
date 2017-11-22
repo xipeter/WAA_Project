@@ -11,5 +11,9 @@
 	<definition name="riderBaseLayout" template="/WEB-INF/tiles/template/riderTemplate.jsp">
 		<put-attribute name="title" value="Rider" />
 	</definition>
+	
+	<definition name="loginLayout" template="/WEB-INF/tiles/template/loginTemplate.jsp">
+		<put-attribute name="title" value="Login" />
+	</definition>
 	 	
 </tiles-definitions>
