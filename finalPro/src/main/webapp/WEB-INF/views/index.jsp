@@ -52,14 +52,17 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
+                         <form action="track" method="get">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Track No i.e 123 xxx xxx">
+                           
+                                <input type="text" class="form-control" placeholder="Track No i.e 123 xxx xxx" name="number">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
+                                <input class="btn btn-default" type="submit" value="track">
+                                    <i class="fa fa-search">11</i>
+                                </a>
                             </span>
                             </div>
+                            </form>
                             <!-- /input-group -->
                         </li>
                         <li>

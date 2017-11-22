@@ -10,5 +10,6 @@ public interface RiderService {
 	Rider findByUsername(String username);
 	void saveFull(Rider rider);
 	List<Rider> getAvailableRider();
+	public Rider findById(Long id);
 	
 }

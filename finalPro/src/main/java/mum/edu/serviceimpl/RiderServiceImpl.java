@@ -40,4 +40,10 @@ public class RiderServiceImpl implements RiderService {
 		riderRepository.save(rider);
 	}
 
+	@Override
+	public Rider findById(Long id) {
+		// TODO Auto-generated method stub
+		return this.riderRepository.findOne(id);
+	}
+
 }
