@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 public class OrderDelivery implements Serializable{
@@ -24,6 +25,9 @@ public class OrderDelivery implements Serializable{
 	private Long id;
 	
 	private String address;
+	
+	@Email(message="email is required")
+	private String email;
 	
 	private String customerName;
 	
@@ -102,6 +106,14 @@ public class OrderDelivery implements Serializable{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

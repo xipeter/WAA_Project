@@ -32,6 +32,11 @@
 	
 	<action-state id="processSelectRider">
 		<evaluate expression="orderDeliveryControllerHelper.saveOrderDelivery(orderDelivery, rider)" result="orderDelivery"/>
+		<transition to="processNotification" />
+	</action-state>
+	
+	<action-state id="processNotification">
+		<evaluate expression="orderDeliveryControllerHelper.sendOutNotifcation(orderDelivery,rider)"/>
 		<transition to="thankRestaurant" />
 	</action-state>
 	

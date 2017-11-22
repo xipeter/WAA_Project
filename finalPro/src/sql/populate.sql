@@ -19,15 +19,15 @@ INSERT INTO Role (username, role) VALUES ('camilo@gmail.com', 'ROLE_RIDER');
 -- INSERT INTO User (firstname, lastname,age,title,membernumber,username) VALUES ('Allen2','Rench2',123,'Torque Master', 8736,'deliverer');
 
 INSERT INTO  Admin (firstname, lastname,title,username) VALUES ('Peter','Xi','Mr.', 'admin@gmail.com');
-INSERT INTO  Rider (email,firstname,lastname,photoURL,username) VALUES ('camilo@gmail.com','Camilo','Andres', '7ad8f775-665e-4af2-a5ca-b36066f36bb6', 'camilo@gmail.com');
+INSERT INTO  Rider (email,firstname,lastname,photoURL,username) VALUES ('camilo.constante@gmail.com','Camilo','Andres', '7ad8f775-665e-4af2-a5ca-b36066f36bb6', 'camilo@gmail.com');
 -- INSERT INTO  Restaurant (name,firstname, lastname,title,username) VALUES ('Panda Chinese Food','Sam','Khlok','Mr.', 'restaurant');
 -- INSERT INTO  Deliverer (firstname, lastname,title,username) VALUES ('Camilo','Antonio','Mr.', 'deliverer');
-INSERT INTO  Restaurant (name,firstname, lastname,username,note,email,address,phone) VALUES ('Panda Chinese Food','Sam','Khlok','restaurant@gmail.com', 'great restaurant', 'sam@ting.com','address 1 2 3','1012212122');
+INSERT INTO  Restaurant (name,firstname, lastname,username,note,email,address,phone) VALUES ('Panda Chinese Food','Sam','Khlok','restaurant@gmail.com', 'great restaurant', 'khlok.samphors@gmail.com','address 1 2 3','1012212122');
 
 INSERT INTO OrderStatus (status) VALUES ('NEW');
 INSERT INTO OrderStatus (status) VALUES ('RIDING');
 INSERT INTO OrderStatus (status) VALUES ('DONE');
 
-INSERT INTO OrderDelivery (address, customerName, trackNumber, restaurant_id, rider_id, status_id) VALUES ('304 W.Hempstead Avenue Fairfield, IA', 'Josh Stark', "123456", 1, 1, 1);
-INSERT INTO OrderDelivery (address, customerName, trackNumber, restaurant_id, rider_id, status_id) VALUES ('1000 N Street Fairfield, IA', 'Martin King', "654321", 1, 1, 1);
+INSERT INTO OrderDelivery (address, customerName, trackNumber, restaurant_id, rider_id, status_id,email) VALUES ('304 W.Hempstead Avenue Fairfield, IA', 'Josh Stark', "123456", 1, 1, 1,'khlok.samphors@gmail.com');
+INSERT INTO OrderDelivery (address, customerName, trackNumber, restaurant_id, rider_id, status_id,email) VALUES ('1000 N Street Fairfield, IA', 'Martin King', "654321", 1, 1, 1,'khlok.samphors@gmail.com');
  

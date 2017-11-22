@@ -145,6 +145,12 @@
 											<form:input id="address" path="address" type="text" class="form:input-large" />
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="control-label col-lg-2" for="email">Email</label>
+										<div class="col-lg-10">
+											<form:input id="email" path="email" type="text" class="form:input-large" />
+										</div>
+									</div>
 									<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
 									<div class="form-group">
 										<div class="col-lg-offset-2 col-lg-10">
