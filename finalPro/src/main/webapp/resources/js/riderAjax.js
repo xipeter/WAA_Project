@@ -10,13 +10,13 @@ $(document).ready(function(){
 			dataType : "json",
 			contentType : 'application/json',
 			success : function(response) {
-				alert("working great");
+				alert("Order accepted");
 				
 				location.reload();
 				
 			},
 			error : function(errorObject) {
-				alert("ouch");
+				alert("There is an error with this order");
 			}
 		});
 	}
@@ -48,7 +48,7 @@ $(document).ready(function(){
 					location.reload();
 				},
 				error : function(errorObject) {
-					alert("error");
+					alert("The track number is not valid");
 				}
 			});
 			
